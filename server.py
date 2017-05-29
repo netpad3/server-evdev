@@ -41,7 +41,7 @@ while True:
         for i in range(0, len(axes)):
             dev.write(ec.EV_ABS, i, int(axes[i]))
         for i in range(0, btncount):
-            value = (buttons >> (btncount-i)) % 2
+            value = (buttons >> (btncount-1-i)) % 2
             dev.write(ec.EV_KEY, 256+i, value)
         dev.syn()
     except:
