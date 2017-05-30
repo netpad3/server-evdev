@@ -15,6 +15,8 @@ while True:
         print(data)
         spl = data.decode('utf-8').split(';')
         axes = spl[0].split(",")
+        if len(axes) == 1 and axes[0].strip() == "":
+            axes = ()
         buttons = 1
         if len(spl) > 1:
             buttons = int(spl[1],16)
